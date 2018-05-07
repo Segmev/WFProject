@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  schedule: 2018-05-07 15:50:48
+  schedule_length_minutes: 1
+  is_paid: false
+  notes: MyText
+  Dentist: 
+  Patient: 
+
+two:
+  schedule: 2018-05-07 15:50:48
+  schedule_length_minutes: 1
+  is_paid: false
+  notes: MyText
+  Dentist: 
+  Patient: 

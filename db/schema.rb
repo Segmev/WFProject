@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507133021) do
+ActiveRecord::Schema.define(version: 20180507145048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "schedule"
+    t.integer "schedule_length_minutes"
+    t.boolean "is_paid"
+    t.text "notes"
+    t.bigint "Dentist_id"
+    t.bigint "Patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Dentist_id"], name: "index_appointments_on_Dentist_id"
+    t.index ["Patient_id"], name: "index_appointments_on_Patient_id"
+  end
+
+  create_table "dentists", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "dental_num"
+    t.boolean "is_active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.text "allergies"
+    t.text "medical_notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
