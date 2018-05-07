@@ -1,0 +1,9 @@
+<h1>
+  <%= get_public_page_title %>
+</h1>
+<p class="desc">
+  <%= get_public_page_desc %>
+</p>
+<% get_public_page_images.each do |image| %>
+  <%= image_tag(image, :alt => "rss feed", :class => 'center_image') %>
+<% end %>
