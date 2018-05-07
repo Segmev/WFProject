@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :news
   resources :contacts
+  resources :news
   resources :appointments
   resources :patients
   resources :dentists
