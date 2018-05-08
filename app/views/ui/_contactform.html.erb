@@ -3,19 +3,7 @@
 </p>
 
 <div class="col-md-6 col-md-offset-3">
-  <!--form>
-    <label for="name">Name:</label>
-    <input type="text" class="form-control" id="name">
-    <label for="phone">Phone:</label>
-    <input type="text" class="form-control" id="phone">
-    <label for="mail">E-Mail:</label>
-    <input type="text" class="form-control" id="mail">
-    <label for="msg">Message:</label>
-    <textarea class="form-control" rows="10" id="msg">
-    </textarea>
-    <input type="submit" value="Send" class="btn btn-primary">
-  </form-->
-  <%= form_for(@contact) do |f| %>
+  <%= form_with(model: contact, local: true) do |f| %>
     <%= f.label "Name" %>
     <%= f.text_fiels :name, class: 'form-control' %>
 
@@ -26,7 +14,7 @@
     <%= f.text_fiels :mail, class: 'form-control' %>
 
     <%= f.label "Message" %>
-    <%= f.text_area :msg, class: 'form-control' %>
+    <%= f.text_area :content, class: 'form-control' %>
 
     <%= f.submit "Send message", class: "btn btn-primary" %>
   <% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>News</h1>
+
+<% @news.each do |article| %>
+  <div class="panel panel-info">
+    <div class="panel-heading"><h4 class="panel-title"><%= article.title %></h4></div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= article.content %></div>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to 'New News', new_news_path %>

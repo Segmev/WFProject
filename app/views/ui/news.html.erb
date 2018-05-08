@@ -1,22 +1,10 @@
 <h1>News</h1>
 
-<%
-news = {
-  "dentition1" => "the arrangement or condition of the teeth in a particular species or individual.
-  the arrangement or condition of the teeth in a particular species or individual.the arrangement or condition of the teeth in a particular species or individual.
-  the arrangement or condition of the teeth in a particular species or individual.the arrangement or condition of the teeth in a particular species or individual.
-  the arrangement or condition of the teeth in a particular species or individual.the arrangement or condition of the teeth in a particular species or individual.
-  the arrangement or condition of the teeth in a particular species or individual.the arrangement or condition of the teeth in a particular species or individual.",
-  "dentition2" => "the arrangement or condition of the teeth in a particular species or individual.",
-  "dentition3" => "the arrangement or condition of the teeth in a particular species or individual."
-}
-%>
-
-<% news.each do |title,content| %>
+<% news.each do |article| %>
   <div class="panel panel-info">
-    <div class="panel-heading"><h4 class="panel-title"><%= "#{title}" %></h4></div>
+    <div class="panel-heading"><h4 class="panel-title"><%= article.title %></h4></div>
     <div class="panel-body">
-      <div class="panel-text" style="text-align:justify"><%= "#{content}" %></div>
+      <div class="panel-text" style="text-align:justify"><%= article.content %></div>
     </div>
   </div>
 <% end %>
