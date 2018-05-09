@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pictures
+  resources :pages
   resources :contacts
   resources :news
   resources :appointments

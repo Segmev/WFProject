@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Alt text:</strong>
+  <%= @picture.alt_text %>
+</p>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @picture.caption %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @picture.image %>
+</p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @picture.page_id %>
+</p>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>
