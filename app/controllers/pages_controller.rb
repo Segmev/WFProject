@@ -28,17 +28,24 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(page_params)
 
-    puts page_params
+    #puts page_params
     respond_to do |format|
-      if @page.save
-        format.html { redirect_to @page, notice: 'Page was successfully created.' }
-        format.json { render :show, status: :created, location: @page }
+      if params[:add_picture]
+        @page.pictures.build
+        @pictures = @page.pictures
+      elsif params[:remove_picture]
+
       else
-        format.html { render :new }
-        format.json { render json: @page.errors, status: :unprocessable_entity }
+        if @page.save
+          format.html { redirect_to @page, notice: 'Page was successfully created.' }
+          format.json { render :show, status: :created, location: @page }
+        end
       end
+      format.html { render :new }
+      format.json { render json: @page.errors, status: :unprocessable_entity }
     end
   end
+
 
   # PATCH/PUT /pages/1
   # PATCH/PUT /pages/1.json
@@ -72,6 +79,6 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:title, :content, pictures_attributes: [:id, :image, :alt_text, :caption])
+      params.require(:page).permit(:title, :content, pictures_attributes: [:id, :image, :alt_text, :caption, :destroy])
     end
 end
