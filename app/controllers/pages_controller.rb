@@ -64,9 +64,9 @@ class PagesController < ApplicationController
   # DELETE /pages/1
   # DELETE /pages/1.json
   def destroy
-    @page.destroy
+    @page.pictures.destroy(params[:image])
     respond_to do |format|
-      format.html { redirect_to pages_url, notice: 'Page was successfully destroyed.' }
+      format.html { redirect_to pages_url, notice: 'Image was successfully deleted.' }
       format.json { head :no_content }
     end
   end

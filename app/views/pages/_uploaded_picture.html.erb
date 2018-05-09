@@ -1,0 +1,15 @@
+<div>
+  <%= image_tag(uploaded_picture.image) %>
+</div>
+
+<div>
+  <%= uploaded_picture.alt_text %>
+</div>
+
+<div>
+  <%= uploaded_picture.caption %>
+</div>
+
+<div>
+  <%= link_to "Delete picture", page_path(image: uploaded_picture.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

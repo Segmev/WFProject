@@ -32,7 +32,7 @@
     <%= form.submit "Add picture", :name => "add_picture" %>
   </div>
 
-
+  <%= render partial: "uploaded_picture", collection: @page.pictures %>
 
 
   <div class="actions">
