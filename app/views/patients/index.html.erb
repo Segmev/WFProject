@@ -1,35 +1,34 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Patients</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Allergies</th>
-      <th>Medical notes</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @patients.each do |patient| %>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= patient.name %></td>
-        <td><%= patient.email %></td>
-        <td><%= patient.phone %></td>
-        <td><%= patient.allergies %></td>
-        <td><%= patient.medical_notes %></td>
-        <td><%= link_to 'Show', patient %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Allergies</th>
+        <th scope="col">Medical notes</th>
+        <th scope="col" colspan="3">Options</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.name %></td>
+          <td><%= patient.email %></td>
+          <td><%= patient.phone %></td>
+          <td><%= patient.allergies %></td>
+          <td><%= patient.medical_notes %></td>
+          <td><%= link_to 'Show', patient, :class => 'btn btn-primary' %></td>
+          <td><%= link_to 'Edit', edit_patient_path(patient), :class => 'btn btn-primary' %></td>
+          <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
-<%= link_to 'New Patient', new_patient_path %>
+<%= link_to 'New Patient', new_patient_path, :class => "btn btn-primary" %>

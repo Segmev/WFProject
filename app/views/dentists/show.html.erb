@@ -1,29 +1,59 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Name</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @dentist.name %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @dentist.name %>
-</p>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>E-Mail</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @dentist.email %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @dentist.email %>
-</p>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Phone</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @dentist.phone %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @dentist.phone %>
-</p>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Dental number</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @dentist.dental_num %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Dental num:</strong>
-  <%= @dentist.dental_num %>
-</p>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Active</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @dentist.is_active %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Is active:</strong>
-  <%= @dentist.is_active %>
-</p>
-
-<%= link_to 'Edit', edit_dentist_path(@dentist) %> |
-<%= link_to 'Back', dentists_path %>
+<br>
+<%= link_to 'Edit', edit_dentist_path(@dentist), :class => "btn btn-primary" %>
+<%= link_to 'Back', dentists_path, :class => "btn btn-primary"  %>

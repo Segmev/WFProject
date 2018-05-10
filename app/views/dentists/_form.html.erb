@@ -11,32 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :dentist_name %>
-  </div>
+  <%= form.label :name %>
+  <%= form.text_field :name, id: :dentist_name, :class => "form-control" %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :dentist_email %>
-  </div>
+  <%= form.label :email %>
+  <%= form.text_field :email, id: :dentist_email, :class => "form-control" %>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, id: :dentist_phone %>
-  </div>
+  <%= form.label :phone %>
+  <%= form.text_field :phone, id: :dentist_phone, :class => "form-control" %>
 
-  <div class="field">
-    <%= form.label :dental_num %>
-    <%= form.text_field :dental_num, id: :dentist_dental_num %>
-  </div>
+  <%= form.label "Dental number" %>
+  <%= form.text_field :dental_num, id: :dentist_dental_num, :class => "form-control" %>
 
-  <div class="field">
-    <%= form.label :is_active %>
-    <%= form.check_box :is_active, id: :dentist_is_active %>
-  </div>
+  <%= form.label "Active" %>
+  <%= form.check_box :is_active, id: :dentist_is_active %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit "Add dentist", :class => "btn btn-primary" %>
 <% end %>

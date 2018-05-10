@@ -11,32 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :patient_name %>
-  </div>
+    <%= form.text_field :name, id: :patient_name, :class => 'form-control' %>
 
-  <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, id: :patient_email %>
-  </div>
+    <%= form.text_field :email, id: :patient_email, :class => 'form-control' %>
 
-  <div class="field">
     <%= form.label :phone %>
-    <%= form.text_field :phone, id: :patient_phone %>
-  </div>
+    <%= form.text_field :phone, id: :patient_phone, :class => 'form-control' %>
 
-  <div class="field">
     <%= form.label :allergies %>
-    <%= form.text_area :allergies, id: :patient_allergies %>
-  </div>
+    <%= form.text_area :allergies, id: :patient_allergies, :class => 'form-control' %>
 
-  <div class="field">
     <%= form.label :medical_notes %>
-    <%= form.text_area :medical_notes, id: :patient_medical_notes %>
-  </div>
+    <%= form.text_area :medical_notes, id: :patient_medical_notes, :class => 'form-control' %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit "Add patient", :class => "btn btn-primary" %>
 <% end %>

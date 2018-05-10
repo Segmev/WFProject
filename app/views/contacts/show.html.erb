@@ -1,24 +1,48 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Name</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @contact.name %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>E-Mail</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @contact.email %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Phone</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @contact.phone %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @contact.content %>
-</p>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Content</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @contact.content %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @contact.phone %>
-</p>
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+  <br>
+  <%= link_to 'Edit', edit_contact_path(@contact), :class => 'btn btn-primary' %>
+  <%= link_to 'Back', contacts_path, :class => 'btn btn-primary' %>

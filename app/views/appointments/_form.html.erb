@@ -11,37 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :schedule %>
-    <%= form.datetime_select :schedule, id: :appointment_schedule %>
-  </div>
+  <%= form.label :schedule %>
+  <%= form.datetime_select :schedule, id: :appointment_schedule %>
 
-  <div class="field">
-    <%= form.label :schedule_length_minutes %>
-    <%= form.number_field :schedule_length_minutes, id: :appointment_schedule_length_minutes %>
-  </div>
+  <%= form.label :schedule_length_minutes %>
+  <%= form.number_field :schedule_length_minutes, id: :appointment_schedule_length_minutes, :class => 'form-control' %>
 
-  <div class="field">
-    <%= form.label :is_paid %>
-    <%= form.check_box :is_paid, id: :appointment_is_paid %>
-  </div>
+  <%= form.label "Paid" %>
+  <%= form.check_box :is_paid, id: :appointment_is_paid %>
 
-  <div class="field">
-    <%= form.label :notes %>
-    <%= form.text_area :notes, id: :appointment_notes %>
-  </div>
+  <%= form.label :notes %>
+  <%= form.text_area :notes, id: :appointment_notes, :class => 'form-control' %>
 
-  <div class="field">
-    <%= form.label :Dentist %>
-    <%= form.text_field :Dentist, id: :appointment_Dentist %>
-  </div>
+  <%= form.label :Dentist %>
+  <%= form.text_field :Dentist, id: :appointment_Dentist, :class => 'form-control' %>
 
-  <div class="field">
-    <%= form.label :Patient %>
-    <%= form.text_field :Patient, id: :appointment_Patient %>
-  </div>
+  <%= form.label :Patient %>
+  <%= form.text_field :Patient, id: :appointment_Patient, :class => 'form-control' %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit "Add appointment", :class => "btn btn-primary"%>
 <% end %>
