@@ -51,13 +51,20 @@ class PagesController < ApplicationController
   # PATCH/PUT /pages/1.json
   def update
     respond_to do |format|
-      if @page.update(page_params)
-        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
-        format.json { render :show, status: :ok, location: @page }
+      if params[:add_picture]
+        @page.pictures.build
+        @pictures = @page.pictures
+      elsif params[:remove_picture]
+
       else
+        if @page.update(page_params)
+          flash[:notice] = 'Page was successfully updated.'
+          format.html { render :edit, notice: 'Page was successfully updated.' }
+          format.json { render :show, status: :ok, location: @page }
+        end
+      end
         format.html { render :edit }
         format.json { render json: @page.errors, status: :unprocessable_entity }
-      end
     end
   end
 
@@ -66,7 +73,8 @@ class PagesController < ApplicationController
   def destroy
     @page.pictures.destroy(params[:image])
     respond_to do |format|
-      format.html { redirect_to pages_url, notice: 'Image was successfully deleted.' }
+      flash[:notice] = 'Image was successfully deleted.'
+      format.html { render :edit, notice: 'Image was successfully deleted.' }
       format.json { head :no_content }
     end
   end
