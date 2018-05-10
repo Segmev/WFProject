@@ -1,4 +1,9 @@
-<h1>About us</h1>
-<p class="desc">
-  We are two students preparing a website for people who want to learn more about how to become a dentist.
-</p>
+<div class="row" class="center_image">
+  <h1>
+    <%= @page.title %>
+  </h1>
+  <p class="desc">
+    <%= @page.content %>
+  </p>
+  <%= render partial: "pictures", collection: @page.pictures %>
+</div>

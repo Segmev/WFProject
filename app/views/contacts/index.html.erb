@@ -8,7 +8,7 @@
         <th scope="col">Name</th>
         <th scope="col">Content</th>
         <th scope="col">Phone</th>
-        <th scope="col" colspan="3">Options</th>
+        <th scope="col" colspan="2">Options</th>
       </tr>
     </thead>
 
@@ -20,7 +20,6 @@
           <td><%= contact.content %></td>
           <td><%= contact.phone %></td>
           <td><%= link_to 'Show', contact, :class => 'btn btn-primary' %></td>
-          <td><%= link_to 'Edit', edit_contact_path(contact), :class => 'btn btn-primary' %></td>
           <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
         </tr>
       <% end %>
@@ -28,5 +27,3 @@
   </table>
 </div>
 <br>
-
-<%= link_to 'New Contact', new_contact_path, :class => 'btn btn-primary' %>

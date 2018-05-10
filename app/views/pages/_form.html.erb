@@ -20,9 +20,8 @@
     <%= form.fields_for :pictures do |builder| %>
       <%= render 'picture_fields', :form => builder %>
     <% end %>
+    <%= render partial: "uploaded_picture", collection: @page.pictures %>
 
     <%= form.submit "Add picture", :name => "add_picture", :class => "btn btn-primary" %>
-
-    <%= render partial: "uploaded_picture", collection: @page.pictures %>
     <%= form.submit "Edit page", :class => "btn btn-primary"  %>
 <% end %>

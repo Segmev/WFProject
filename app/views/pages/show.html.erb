@@ -5,5 +5,8 @@
   <p class="desc">
     <%= @page.content %>
   </p>
-  <%= render partial: "uploaded_picture", collection: @page.pictures %>
+  <%= render partial: "pictures", collection: @page.pictures %>
 </div>
+<br>
+<%= link_to 'Edit', edit_page_path(@page), :class => 'btn btn-primary' %>
+<%= link_to 'Back', page_path, :class => 'btn btn-primary' %>

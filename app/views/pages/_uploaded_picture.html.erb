@@ -1,15 +1,8 @@
-<div>
-  <%= image_tag(uploaded_picture.image) %>
+<div style="margin-top: 20px">
+  <%= image_tag(uploaded_picture.image, :alt => uploaded_picture.alt_text, :class => 'center_image') %>
 </div>
 
-<div>
-  <%= uploaded_picture.alt_text %>
+<div style="text-align: center;margin-top:20px">
+  <%= link_to "Delete picture", page_path(image: uploaded_picture.id), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
 </div>
-
-<div>
-  <%= uploaded_picture.caption %>
-</div>
-
-<div>
-  <%= link_to "Delete picture", page_path(image: uploaded_picture.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
+<br>

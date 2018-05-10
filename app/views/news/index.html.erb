@@ -1,14 +1,28 @@
-<p id="notice"><%= notice %></p>
-
 <h1>News</h1>
 
-<% @news.each do |article| %>
-  <div class="panel panel-info">
-    <div class="panel-heading"><h4 class="panel-title"><%= article.title %></h4></div>
-    <div class="panel-body">
-      <div class="panel-text" style="text-align:justify"><%= article.content %></div>
-    </div>
-  </div>
-<% end %>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+        <th scope="col" colspan="3">Options</th>
+      </tr>
+    </thead>
 
-<%= link_to 'New News', new_news_path %>
+    <tbody>
+      <% @news.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%= article.content %></td>
+          <td><%= link_to 'Show', article, :class => 'btn btn-primary' %></td>
+          <td><%= link_to 'Edit', edit_news_path(article), :class => 'btn btn-primary' %></td>
+          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+
+<%= link_to 'New article', new_news_path, :class => "btn btn-primary" %>
