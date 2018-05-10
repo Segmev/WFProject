@@ -11,31 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :page_title %>
-  </div>
+    <%= form.text_field :title, id: :page_title, :class => "form-control" %>
 
-  <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content, id: :page_content %>
-  </div>
+    <%= form.text_area :content, id: :page_content, :class => "form-control"%>
 
+    <%= form.fields_for :pictures do |builder| %>
+      <%= render 'picture_fields', :form => builder %>
+    <% end %>
 
-  <div class="fields">
-  <%= form.fields_for :pictures do |builder| %>
-    <%= render 'picture_fields', :form => builder %>
-  <% end %>
-  </div>
+    <%= form.submit "Add picture", :name => "add_picture", :class => "btn btn-primary" %>
 
-  <div class="actions">
-    <%= form.submit "Add picture", :name => "add_picture" %>
-  </div>
-
-  <%= render partial: "uploaded_picture", collection: @page.pictures %>
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= render partial: "uploaded_picture", collection: @page.pictures %>
+    <%= form.submit "Edit page", :class => "btn btn-primary"  %>
 <% end %>
