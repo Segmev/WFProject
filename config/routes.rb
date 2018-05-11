@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :patients
   resources :dentists
   devise_for :users
+  scope "/admin" do
+    resources :users
+  end
   root to: 'ui#home'
   get '/', to: 'ui#home'
   get '/home', to: 'ui#home'
