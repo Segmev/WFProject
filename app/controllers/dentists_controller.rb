@@ -1,5 +1,6 @@
 class DentistsController < ApplicationController
   before_action :set_dentist, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /dentists
   # GET /dentists.json
