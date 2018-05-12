@@ -6,6 +6,30 @@
         <li><%= link_to "News", "/newsfeed" %></li>
         <li><%= link_to "About us", "/about" %></li>
         <li><%= link_to "Contact us", "/contact" %></li>
+        <% if current_user %>
+          <li class="dropdown nav-item">
+            <a class="nav-link">Administration<span class="caret"></span></a>
+            <span class="dropdown-toggle"></span>
+            <div class="dropdown-content">
+              <p><a href="/pages">Pages</a></p>
+              <p><a href="/news">News</a></p>
+              <% if current_user.is_admin %>
+                <p><a href="/admin/users">Users</a></p>
+              <% end %>
+              <p><a href="/dentists">Dentists</a></p>
+              <p><a href="/patients">Patients</a></p>
+              <p><a href="/appointments">Appointments</a></p>
+              <p><a href="/contacts">Contacts</a></p>
+            </div>
+          </li>
+        <% end %>
+        <li>
+          <%= unless current_user
+               link_to "Sign in", "/users/sign_in"
+              else
+                link_to "Log out", "/users/sign_out", :method => 'delete'
+          end %>
+        </li>
       </ul>
     </nav>
   </div>

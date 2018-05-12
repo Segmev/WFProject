@@ -1,7 +1,7 @@
 class UiController < ApplicationController
 
   def newsfeed
-      @news = News.all
+    @news = News.all
   end
 
   def contact
@@ -15,5 +15,4 @@ class UiController < ApplicationController
   def about
     @page = Page.find_by_id(2)
   end
-
 end

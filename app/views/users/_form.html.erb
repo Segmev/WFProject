@@ -11,7 +11,8 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.label "Activate" %>
+  <%= form.check_box :is_activated, id: :user_is_activated %>
+
+  <%= form.submit "Submit", :class => "btn btn-primary" %>
 <% end %>
