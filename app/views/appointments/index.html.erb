@@ -23,8 +23,8 @@
         <td><%= appointment.schedule_length_minutes %></td>
         <td><%= appointment.is_paid %></td>
         <td><%= appointment.notes %></td>
-        <td><%= appointment.Dentist %></td>
-        <td><%= appointment.Patient %></td>
+        <td><%= appointment.dentist.name %></td>
+        <td><%= appointment.patient.name %></td>
         <td><%= link_to 'Show', appointment, :class => 'btn btn-primary'  %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment), :class => 'btn btn-primary'  %></td>
         <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger'  %></td>

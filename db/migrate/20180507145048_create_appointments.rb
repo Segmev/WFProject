@@ -5,8 +5,8 @@ class CreateAppointments < ActiveRecord::Migration[5.1]
       t.integer :schedule_length_minutes
       t.boolean :is_paid
       t.text :notes
-      t.references :Dentist
-      t.references :Patient
+      t.belongs_to :dentist
+      t.belongs_to :patient
 
       t.timestamps
     end

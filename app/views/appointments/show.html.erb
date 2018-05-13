@@ -22,12 +22,12 @@
 
 <p>
   <strong>Dentist:</strong>
-  <%= @appointment.Dentist %>
+  <%= @appointment.dentist.name %>
 </p>
 
 <p>
   <strong>Patient:</strong>
-  <%= @appointment.Patient %>
+  <%= @appointment.patient.name %>
 </p>
 
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |

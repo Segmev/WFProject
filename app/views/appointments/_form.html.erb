@@ -24,30 +24,10 @@
   <%= form.text_area :notes, id: :appointment_notes, :class => 'form-control' %>
 
   <%= form.label :Dentist %>
-  <% if @dentists.empty? %>
-    <p>There is no dentist registered</p>
-  <% else %>
-    <%= form.select(:appointment_Dentist) do %>
-      <% @dentists.each do |dentist| %>
-        <%= content_tag(:option, dentist.name, value: dentist) %>
-      <% end %>
-    <% end %>
-  <% end %>
+  <%= select(:dentist, :id, Dentist.all.collect {|a| [a.name, a.id]}) %>
 
   <%= form.label :Patient %>
-  <% if @patients.empty? %>
-    <p>There is no patient registered</p>
-  <% else %>
-    <%= form.select(:appointment_Patient) do %>
-      <% @patients.each do |patient| %>
-        <%= content_tag(:option, patient.name, value: patient) %>
-      <% end %>
-    <% end %>
-  <% end %>
+  <%= select(:patient, :id, Patient.all.collect {|a| [a.name, a.id]}) %>
 
-  <%= unless @patients.empty? || @dentists.empty?
-    form.submit "Submit", :class => "btn btn-primary", :disabled => false
-  else
-    form.submit "Submit", :class => "btn btn-primary", :disabled => true
-  end %>
+   <%=  form.submit "Submit", :class => "btn btn-primary", :disabled => false %>
 <% end %>
