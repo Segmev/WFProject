@@ -31,7 +31,7 @@ class ContactsController < ApplicationController
         format.html { redirect_to "/contact", notice: 'Information was successfully sent.' }
         format.json { render :show, status: :created, location: @contact }
       else
-        format.html { redirect_to "/contact" }
+        format.html { redirect_to "/contact", alert: "Email must be valid and name cannot be blank." }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
       end
     end
