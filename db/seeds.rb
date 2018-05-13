@@ -14,12 +14,14 @@ User.create!(
         email: "admin@no-mail.com",
         password: "password",
         password_confirmation: "password",
-        is_admin: true
+        is_admin: true,
+        approved: true
 ).save!
 
 User.create!(
     email: "staff@no-mail.com",
     password: "password",
     password_confirmation: "password",
-    is_admin: false
+    is_admin: false,
+    approved: true
 ).save!
