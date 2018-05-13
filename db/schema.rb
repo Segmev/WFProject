@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 20180509045751) do
     t.integer "schedule_length_minutes"
     t.boolean "is_paid"
     t.text "notes"
-    t.bigint "Dentist_id"
-    t.bigint "Patient_id"
+    t.bigint "dentist_id"
+    t.bigint "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Dentist_id"], name: "index_appointments_on_Dentist_id"
-    t.index ["Patient_id"], name: "index_appointments_on_Patient_id"
+    t.index ["dentist_id"], name: "index_appointments_on_dentist_id"
+    t.index ["patient_id"], name: "index_appointments_on_patient_id"
   end
 
   create_table "contacts", force: :cascade do |t|

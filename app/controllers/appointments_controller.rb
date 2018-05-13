@@ -16,20 +16,18 @@ class AppointmentsController < ApplicationController
   # GET /appointments/new
   def new
     @appointment = Appointment.new
-    @patients = Patient.all
-    @dentists = Dentist.all
   end
 
   # GET /appointments/1/edit
   def edit
-    @patients = Patient.all
-    @dentists = Dentist.all
   end
 
   # POST /appointments
   # POST /appointments.json
   def create
     @appointment = Appointment.new(appointment_params)
+    @appointment.dentist = Dentist.find(params[:dentist][:id])
+    @appointment.patient = Patient.find(params[:patient][:id])
 
     respond_to do |format|
       if @appointment.save
@@ -74,6 +72,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.require(:appointment).permit(:schedule, :schedule_length_minutes, :is_paid, :notes, :Dentist, :Patient)
+      params.require(:appointment).permit(:schedule, :schedule_length_minutes, :is_paid, :notes, :dentist, :patient)
     end
 end
