@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   get '/newsfeed', to: 'ui#newsfeed'
   get '/about', to: 'ui#about'
   get '/contact', to: 'ui#contact'
+  get '/reports/dentistappointments', to: 'reports#dentistappointments'
+  get '/reports/total', to: 'reports#total'
+  get '/reports', to: 'reports#index'
 end
