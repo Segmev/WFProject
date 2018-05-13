@@ -1,34 +1,69 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Schedule</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @appointment.schedule %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Schedule:</strong>
-  <%= @appointment.schedule %>
-</p>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Schedule length in minutes</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @appointment.schedule_length_minutes %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Schedule length minutes:</strong>
-  <%= @appointment.schedule_length_minutes %>
-</p>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Paid</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @appointment.is_paid %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Is paid:</strong>
-  <%= @appointment.is_paid %>
-</p>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Note</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @appointment.notes %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @appointment.notes %>
-</p>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Dentist</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @appointment.dentist.name %></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Dentist:</strong>
-  <%= @appointment.dentist.name %>
-</p>
-
-<p>
-  <strong>Patient:</strong>
-  <%= @appointment.patient.name %>
-</p>
-
-<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
-<%= link_to 'Back', appointments_path %>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p class="panel-title">
+        <strong>Patient</strong>
+      </p>
+    </div>
+    <div class="panel-body">
+      <div class="panel-text" style="text-align:justify"><%= @appointment.patient.name %></div>
+    </div>
+  </div>
+<br>
+<%= link_to 'Edit', edit_appointment_path(@appointment), :class => "btn btn-primary" %>
+<%= link_to 'Back', appointments_path, :class => "btn btn-primary" %>

@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # TODO ajouter les seeds
-Page.create(title: "Home", content: "A dentist performs many important duties in the maintenance of oral health. Check-ups are a major part of the job and are important for patients keeping on top of their oral care. In addition to general check-ups, general dentistry involves basic treatments that can be done at a regular dental office. Such procedures might include filling a tooth, performing a minor surgical procedure such as a tooth extraction, and cleaning and polishing teeth. A dentist will encourage patients to practice good dental care by brushing and flossing and getting regular cleanings as these good habits can help prevent cavities and other tooth and gum diseases.")
-Page.create(title: "About us", content: "A dentist performs many important duties in the maintenance of oral health. Check-ups are a major part of the job and are important for patients keeping on top of their oral care. In addition to general check-ups, general dentistry involves basic treatments that can be done at a regular dental office. Such procedures might include filling a tooth, performing a minor surgical procedure such as a tooth extraction, and cleaning and polishing teeth. A dentist will encourage patients to practice good dental care by brushing and flossing and getting regular cleanings as these good habits can help prevent cavities and other tooth and gum diseases.")
+#Page.create(title: "Home", content: "A dentist performs many important duties in the maintenance of oral health. Check-ups are a major part of the job and are important for patients keeping on top of their oral care. In addition to general check-ups, general dentistry involves basic treatments that can be done at a regular dental office. Such procedures might include filling a tooth, performing a minor surgical procedure such as a tooth extraction, and cleaning and polishing teeth. A dentist will encourage patients to practice good dental care by brushing and flossing and getting regular cleanings as these good habits can help prevent cavities and other tooth and gum diseases.")
+#Page.create(title: "About us", content: "A dentist performs many important duties in the maintenance of oral health. Check-ups are a major part of the job and are important for patients keeping on top of their oral care. In addition to general check-ups, general dentistry involves basic treatments that can be done at a regular dental office. Such procedures might include filling a tooth, performing a minor surgical procedure such as a tooth extraction, and cleaning and polishing teeth. A dentist will encourage patients to practice good dental care by brushing and flossing and getting regular cleanings as these good habits can help prevent cavities and other tooth and gum diseases.")
 
 User.create!(
-        email: "admin@no-mail.com",
+        email: "admin2@no-mail.com",
         password: "password",
         password_confirmation: "password",
         is_admin: true,
@@ -19,7 +19,7 @@ User.create!(
 ).save!
 
 User.create!(
-    email: "staff@no-mail.com",
+    email: "staff2@no-mail.com",
     password: "password",
     password_confirmation: "password",
     is_admin: false,

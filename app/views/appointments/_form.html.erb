@@ -5,7 +5,7 @@
 
       <ul>
       <% appointment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class="alert alert-danger"><%= message %></li>
       <% end %>
       </ul>
     </div>
@@ -14,7 +14,7 @@
   <%= form.label :schedule %>
   <%= form.datetime_select :schedule, id: :appointment_schedule %>
 
-  <%= form.label :schedule_length_minutes %>
+  <%= form.label "Schedule length in minutes" %>
   <%= form.number_field :schedule_length_minutes, id: :appointment_schedule_length_minutes, :class => 'form-control' %>
 
   <%= form.label "Paid" %>

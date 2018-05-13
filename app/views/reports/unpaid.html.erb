@@ -1,4 +1,6 @@
-<h1>Appointments</h1>
+<h1>Unpaid appointments</h1>
+
+<p>Total : <%= @appointments_count %>
 
 <div class="table-responsive">
 <table class="table table-striped">
@@ -10,7 +12,6 @@
       <th scope="col">Notes</th>
       <th scope="col">Dentist</th>
       <th scope="col">Patient</th>
-      <th scope="col" colspan="3">Options</th>
     </tr>
   </thead>
 
@@ -23,14 +24,8 @@
         <td><%= appointment.notes %></td>
         <td><%= appointment.dentist.name %></td>
         <td><%= appointment.patient.name %></td>
-        <td><%= link_to 'Show', appointment, :class => 'btn btn-primary'  %></td>
-        <td><%= link_to 'Edit', edit_appointment_path(appointment), :class => 'btn btn-primary'  %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger'  %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
-<br>
-
-<%= link_to 'New Appointment', new_appointment_path, :class => 'btn btn-primary'  %>

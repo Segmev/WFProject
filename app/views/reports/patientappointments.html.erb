@@ -1,4 +1,4 @@
-<h1>Appointments of the dentist <%= @dentist.name %></h1>
+<h1>Appointments of the patient <%= @patient.name %></h1>
 
 <div class="table-responsive">
 <table class="table table-striped">
@@ -8,19 +8,19 @@
       <th scope="col">Schedule length in minutes</th>
       <th scope="col">Paid</th>
       <th scope="col">Notes</th>
-      <th scope="col">Patient</th>
+      <th scope="col">Dentist</th>
     </tr>
   </thead>
 
   <tbody>
     <% @appointments.each do |appointment| %>
-      <% if appointment.dentist.name == @dentist.name %>
+      <% if appointment.patient.name == @patient.name %>
         <tr>
           <td><%= appointment.schedule %></td>
           <td><%= appointment.schedule_length_minutes %></td>
           <td><%= appointment.is_paid %></td>
           <td><%= appointment.notes %></td>
-          <td><%= appointment.patient.name %></td>
+          <td><%= appointment.dentist.name %></td>
         </tr>
       <% end %>
     <% end %>

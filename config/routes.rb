@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/about', to: 'ui#about'
   get '/contact', to: 'ui#contact'
   get '/reports/dentistappointments', to: 'reports#dentistappointments'
+  get '/reports/patientappointments', to: 'reports#patientappointments'
+  get '/reports/unpaid', to: 'reports#unpaid'
   get '/reports/total', to: 'reports#total'
   get '/reports', to: 'reports#index'
 end

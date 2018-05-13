@@ -4,6 +4,11 @@
 <br><a href="/reports/total" class="btn btn-primary">Go to report</a>
 
 <div style="margin-top:25px">
+  <%= label_tag(:q, "Unpaid appointments") %>
+  <br><a href="/reports/unpaid" class="btn btn-primary">Go to report</a>
+</di>
+
+<div style="margin-top:25px">
   <%= form_tag("/reports/dentistappointments", method: "get") do %>
     <%= label_tag(:dentist, "Dentist appointments") %>
     <%= select(:dentist, :id, Dentist.all.collect {|a| [a.name, a.id]}) %>
@@ -11,26 +16,10 @@
   <% end %>
 </div>
 
-
-
-<p style="margin-top:20px">Patient appointments</p>
-<% if @patients.empty? %>
-  <p>There is no patient registered</p>
-<% else %>
-  <%= select(:patient, "Patient") do %>
-    <% @patients.each do |patient| %>
-      <%= content_tag(:option, patient.name, value: patient) %>
-    <% end %>
+<div style="margin-top:25px">
+  <%= form_tag("/reports/patientappointments", method: "get") do %>
+    <%= label_tag(:patient, "Patient appointments") %>
+    <%= select(:patient, :id, Patient.all.collect {|a| [a.name, a.id]}) %>
+    <%= submit_tag("Go to report", :class => "btn btn-primary") %>
   <% end %>
-<% end %>
-
-<p style="margin-top:20px">Dentist patients</p>
-<% if @dentists.empty? %>
-  <p>There is no dentist registered</p>
-<% else %>
-  <%= select(:dentist, "Dentist") do %>
-    <% @dentists.each do |dentist| %>
-      <%= content_tag(:option, dentist.name, value: dentist) %>
-    <% end %>
-  <% end %>
-<% end %>
+</div>
