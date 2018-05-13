@@ -11,8 +11,12 @@
     </div>
   <% end %>
 
-  <%= form.label "Activate" %>
-  <%= form.check_box :is_activated, id: :user_is_activated %>
+  <%= form.label "Activate account" %>
+  <%= form.check_box :approved, id: :user_approved %>
+
+
+  <%= form.label "Admin account" %>
+  <%= form.check_box :is_admin, id: :is_admin %>
 
   <%= form.submit "Submit", :class => "btn btn-primary" %>
 <% end %>
